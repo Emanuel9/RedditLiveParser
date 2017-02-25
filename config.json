@@ -1,3 +1,9 @@
 {
-  "subreddits" : ["python", "go", "mongodb", "docker"]
+  "subreddits"              : ["news"],
+  "client_id"               : "bpsMGO-Mbfy9nQ",
+  "client_secret"           : "oUbXmFvn-u-Twgbifcu2XiHU-Vc",
+  "password"                : "Em@nuel9",
+  "username"                : "demi_1994",
+  "user_agent"              : "RedditLiveParser by /u/demi_1994",
+  "starting_point_date"     : "2017-02-25 11:43:00"
 }
