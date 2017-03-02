@@ -102,7 +102,6 @@ if __name__ == '__main__':
     parser.create_mongo_collection_and_index('reddit_items')
 
     while True:
-        print 'Sunt un boss!'
         parser.get_submissions_and_comments('reddit_items', testing_purpose=False)
         time.sleep(5 * 60)
 

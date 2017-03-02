@@ -60,7 +60,6 @@ class RequestForRedditItems(object):
         self.close_connection_db()
         return data
 
-
 class ProcessRequest(flask.views.MethodView):
     def get(self):
         req = RequestForRedditItems('reddit_items', subreddit=request.args.get('subreddit'), from_date=request.args.get('from'), to_date=request.args.get('to'), keyword=request.args.get('keyword'))

@@ -11,7 +11,6 @@ from datetime import timedelta
 from server import app, RequestForRedditItems
 from reddit_parser import RedditParser
 
-
 class RedditLiveParserTestCase(unittest.TestCase):
 
     #Flask server tests
@@ -25,12 +24,10 @@ class RedditLiveParserTestCase(unittest.TestCase):
         response = tester.get('/items?subreddit=test&from=1488052247&to=1488049923', content_type='application/json')
         self.assertEqual(response.status_code, 200)
 
-
     def test_flask_correct_request_with_keyword(self):
         tester = app.test_client()
         response = tester.get('/items?subreddit=test&from=1488052247&to=1488049923&keyword=was', content_type='application/json')
         self.assertEqual(response.status_code, 200)
-
 
     #Reddit parser tests
     def test_reddit_parser_retrieved_config_file(self):
@@ -39,7 +36,6 @@ class RedditLiveParserTestCase(unittest.TestCase):
 
         rp = RedditParser('config/config.json', 'log/test.log')
         self.assertEqual(cfg_file, rp.input)
-
 
     def test_reddit_parser_mongo_connection(self):
         rp = RedditParser('config/config.json', 'log/test.log')
@@ -73,7 +69,7 @@ class RedditLiveParserTestCase(unittest.TestCase):
         reddit_parser_data = rp.get_submissions_and_comments('reddit_items_test', testing_purpose=True)
 
         data = server.get_reddit_items(int(start_unix_time), int(end_unix_time))
-        self.assertEqual(len(reddit_parser_data), data.retrieved)
+        self.assertEqual(len(reddit_parser_data), data.count())
         rp.db['reddit_items_test'].drop()
 
 
