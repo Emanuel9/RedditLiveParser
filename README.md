@@ -6,7 +6,7 @@ mongo db : reddit_items. It expose reddit data with filtering capabilities throu
 
 Ex:
 
-http://localhost:5000/items?subreddit=news&from=1488374315%20&to=1488482143&keyword=of
+http://localhost:5000/items?subreddit=news&from=148837431520&to=1488482143&keyword=of
 
 Optimization could be developed when we have a big period to fetch data, to split 
 the process that fetch data and store in db in many processes. 
@@ -32,8 +32,8 @@ python server.py
 
 Dockerfile, requirements.txt and docker-compose.yml for Dockerfile
 
-docker-compose build
-docker-compose up
+- docker-compose build
+- docker-compose up
 
 
 
