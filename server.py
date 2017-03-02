@@ -4,6 +4,7 @@ __author__ = "emanuel.dumitru9@gmail.com"
 
 import logging
 import flask
+import os
 from bson.json_util import dumps
 from pymongo import MongoClient
 from flask import Flask, request
@@ -25,7 +26,7 @@ class RequestForRedditItems(object):
         return True
 
     def create_connection_db(self):
-        self.mongo_connection = MongoClient()
+        self.mongo_connection = MongoClient(os.environ['DB_PORT_27017_TCP_ADDR'], 27017)
         self.db = self.mongo_connection.reddit_data
 
     def close_connection_db(self):

@@ -7,6 +7,7 @@ import json
 import praw
 import time
 import datetime
+import os
 from datetime import timedelta
 from pymongo import MongoClient
 from pymongo import ASCENDING, DESCENDING
@@ -44,7 +45,7 @@ class RedditParser(object):
             self.input = json.load(config_file)
 
     def create_connection_db(self):
-        self.mongo_connection = MongoClient()
+        self.mongo_connection = MongoClient(os.environ['DB_PORT_27017_TCP_ADDR'], 27017)
         self.db = self.mongo_connection.reddit_data
 
     def close_connection_db(self):
