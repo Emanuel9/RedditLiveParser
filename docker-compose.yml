@@ -1,0 +1,11 @@
+version: '2'
+services:
+  mongo: 
+    image: "mongo:3.0"
+  web:
+    build: .
+    command: bash -c "python server.py & python reddit_parser.py"
+    ports: 
+     - "5000:5000"
+    volumes:
+     - .:/redditLiveParser

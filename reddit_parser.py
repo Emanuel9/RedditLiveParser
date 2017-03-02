@@ -103,7 +103,7 @@ if __name__ == '__main__':
 
     while True:
         parser.get_submissions_and_comments('reddit_items', testing_purpose=False)
-        time.sleep(5 * 60)
+        time.sleep(60 * 60)
 
 
 
