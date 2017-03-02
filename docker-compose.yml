@@ -5,16 +5,8 @@ web:
    - "5000:5000"
   volumes:
    - .:/redditLiveParser
-   
-mongodata:  
-  image: mongo:3.0.4
-  volumes:
-    - /data/db
-  command: --break-mongo
-mongo:  
-  image: mongo:3.0.4
-  volumes_from:
-    - mongodata
-  ports:
-    - "27017:27017"
-  command: --smallfiles --rest --auth
+  links:
+    - db
+db:
+  image: mongo:3.0.2
+  
