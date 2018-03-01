@@ -2,7 +2,7 @@
   "subreddits"              : ["python", "news"],
   "client_id"               : "bpsMGO-Mbfy9nQ",
   "client_secret"           : "oUbXmFvn-u-Twgbifcu2XiHU-Vc",
-  "password"                : "Em@nuel9",
+  "password"                : "",
   "username"                : "demi_1994",
   "user_agent"              : "RedditLiveParser by /u/demi_1994",
   "starting_point_date"     : "2017-03-01 08:00:00"
